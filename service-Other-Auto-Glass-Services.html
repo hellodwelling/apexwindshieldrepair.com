@@ -16,7 +16,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Auto Windshield Repair &amp; Replacement in Volusia County,  FL | Apex Win</title>
+    <title>Auto Windshield Repair &amp; Replacement in Volusia County, FL | Apex Wind</title>
 
     
         <link rel="canonical" href="https://apexwindshieldrepair.com/service-Other-Auto-Glass-Services" />
@@ -111,7 +111,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
     <script defer src="https://unpkg.com/img-comparison-slider@7/dist/index.js"></script>
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSw3qRocbSgfTrtxZbCsTjSHZaaJuUXF4&callback=afterGoogleMapsLoaded&libraries=places" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4hz_s1Q-axF4KIkvgnM_6dU25118-Nq0&callback=afterGoogleMapsLoaded&libraries=places" defer></script>
     <script>
         function afterGoogleMapsLoaded() {
             initAutocomplete && initAutocomplete()
@@ -1267,13 +1267,24 @@
             coordinates.results[0].geometry.location.lng,
         ]
     }
+    
+    let googleMapsApiKey = "AIzaSyC4hz_s1Q-axF4KIkvgnM_6dU25118-Nq0"
+    
     async function initMap() {
-        let city = ""
-        let state = ""
-        let radius = ""
-        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${city}+${state}&key=AIzaSyDuL9weltDy_kOcISLRucx5-JSFsezZpVE`
+        let radius = "30"
 
-        let coordinates = await coordinate(url)
+        const coordinates = [];
+
+        let serviceAreas = "[{'city': 'Volusia County', 'state': 'FL', 'radius': 30, 'order': 69, 'latitude': 29.21081, 'longitude': -81.02283}, {'city': 'Orando', 'state': 'FL', 'radius': 30, 'order': 70, 'latitude': 28.53834, 'longitude': -81.37924}]";
+        serviceAreas = serviceAreas.replace(/'/g, '"');
+        serviceAreas = JSON.parse(serviceAreas);
+
+        for (const service_area of serviceAreas || []) {
+            if (service_area?.latitude && service_area?.longitude) {
+                coordinates.push(service_area.latitude, service_area.longitude);
+                break;
+            }
+        }
 
         const map = new google.maps.Map(document.getElementById('map'), {
             zoom: 8,
@@ -1308,7 +1319,7 @@
                 const script = document.createElement('script')
                 script.type = 'text/javascript'
                 script.src =
-                    'https://maps.googleapis.com/maps/api/js?key=AIzaSyDSw3qRocbSgfTrtxZbCsTjSHZaaJuUXF4&callback=initMap&libraries=&v=weekly'
+                    `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap&libraries=&v=weekly`
                 document.body.appendChild(script)
                 observer.unobserve(entry.target)
             }
@@ -1435,7 +1446,7 @@
                                     name="address"
                                     id="contact-address"
                                     class="block w-full border-gray-300 py-2.5 mt-1 rounded-md shadow-sm focus:ring-primary focus:border-primary"
-                                    placeholder="123 Main Street, Volusia County,  FL "
+                                    placeholder="123 Main Street, Volusia County, FL "
                                 />
                             </div>
 
@@ -2072,6 +2083,20 @@
                   <div>
                       <h3 class="text-sm font-semibold tracking-wider text-gray-100 uppercase">Service Areas</h3>
                       <ul role="list" class="mt-4  space-y-4">
+                          
+                          <li>
+                              
+                                <span class="text-base text-gray-100 rounded hover:text-gray-300 focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                    Volusia County, FL
+                                </span>
+                          </li>
+                          
+                          <li>
+                              
+                                <span class="text-base text-gray-100 rounded hover:text-gray-300 focus:outline-none focus:ring-0 focus:ring-offset-0">
+                                    Orando, FL
+                                </span>
+                          </li>
                           
                       </ul>
                   </div>
