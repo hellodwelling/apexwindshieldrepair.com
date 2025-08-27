@@ -710,15 +710,15 @@
 
                     <div class="inline-flex w-full sm:w-auto">
                         
-                        <div onclick="postCtaClick('call')" class="inline-flex w-full sm:w-auto hover:scale-110 transition duration-300 ease-in-out">
-                            <a
-                                target = "_blank" 
-                                href="tel:+18433400939"
+                        <div class="inline-flex w-full sm:w-auto hover:scale-110 transition duration-300 ease-in-out">
+                            <button
+                                data-phone="+18433400939" 
+                                onclick="initiateCall(this); postCtaClick('call')"
                                 :class="{'scale-100': !scrolledFromTop, 'scale-100': scrolledFromTop}"
                                 class="cta_call_conversion inline-flex items-center justify-center w-full px-5 py-3 whitespace-nowrap text-base font-medium transition bg-white border-2 rounded-md   text-primary border-primary   focus:outline-none focus:ring-0 focus:ring-offset-0 sm:w-auto "
-                                >
+                            >
                                 Call Now
-                            </a>
+                            </button>
                         </div>
                         
                     </div>
@@ -989,15 +989,15 @@
                                 
 
                                 
-                                <div onclick="postCtaClick('call')" class="w-full">
-                                    <a
-                                        target = "_blank"
-                                        href="tel:+18433400939"
+                                <div class="w-full">
+                                    <button
+                                        data-phone="+18433400939" 
+                                        onclick="initiateCall(this); postCtaClick('call')"
                                         :class="{'scale-100': !scrolledFromTop, 'scale-100': scrolledFromTop}"
                                         class="cta_call_conversion inline-flex items-center justify-center w-full px-5 py-3 whitespace-nowrap text-base font-medium transition bg-white rounded-md  hover:bg-primary hover:bg-opacity-10 hover:text-white focus:outline-none focus:ring-2 text-primary my-2"
-                                        >
+                                    >
                                         Call Now
-                                    </a>
+                                    </button>
                                 </div>
                                  
                             
@@ -1355,7 +1355,7 @@
                 </div>
                 <div id="error-state-modal" style="padding-left: 24px; padding-right: 24px;"></div>
 
-                <form id="contactModal" class="flex flex-col flex-grow overflow-hidden sm:w-full" onsubmit="send_sms('Apex-Windshield', 'contact-modal', '+18433400939')">
+                <form id="contactModal" class="flex flex-col flex-grow overflow-hidden sm:w-full" onsubmit="send_sms('Apex-Windshield', 'contact-modal', deobfuscateNumber('+18433400939'))">
                     <div class="flex flex-shrink-1 h-auto overflow-x-hidden overflow-y-auto pb-3">
                         <div class="h-auto px-6 sm:mt-6 space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-4">
                             
@@ -1758,14 +1758,14 @@
                     
                     
                     <li class="hidden md:block">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/114029351275804/reviews" class="inline-flex w-full px-5 py-2.5 text-sm font-medium transition border-2 border-transparent rounded-md bg-primary text-primary-foreground focus:outline-none hover:bg-primary-darker focus:ring-2 ring-primary ring-opacity-75 ring-offset-2">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/799903969867658/reviews" class="inline-flex w-full px-5 py-2.5 text-sm font-medium transition border-2 border-transparent rounded-md bg-primary text-primary-foreground focus:outline-none hover:bg-primary-darker focus:ring-2 ring-primary ring-opacity-75 ring-offset-2">
                             
                                 Facebook
                             
                         </a>
                     </li>
                     <li class="block md:hidden">
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/114029351275804" class="inline-flex w-full px-5 py-2.5 text-sm font-medium transition border-2 border-transparent rounded-md bg-primary text-primary-foreground focus:outline-none hover:bg-primary-darker focus:ring-2 ring-primary ring-opacity-75 ring-offset-2">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/799903969867658" class="inline-flex w-full px-5 py-2.5 text-sm font-medium transition border-2 border-transparent rounded-md bg-primary text-primary-foreground focus:outline-none hover:bg-primary-darker focus:ring-2 ring-primary ring-opacity-75 ring-offset-2">
                             
                                 Facebook
                             
@@ -1844,13 +1844,13 @@
                         
                     
                     <div onclick="postCtaClick('call')" class="w-full sm:w-auto mr-4 cta_text_button mt-3 sm:mt-0">
-                        <a
-                            target = "_blank" 
-                            href="tel:+18433400939"
+                        <button
+                            data-phone="+18433400939" 
+                            onclick="initiateCall(this); postCtaClick('call')"
                             class="cta_call_conversion flex justify-center relative rounded p-3 sm:px-10 sm:py-4 overflow-hidden group bg-white relative hover:bg-gradient-to-r hover:from-secondary-lighter hover:to-secondary-darker text-secondary hover:ring-2 hover:ring-offset-2 hover:ring-secondary transition-all ease-out duration-300">
                             <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-secondary opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                             <span class="relative">(843) 340-0939</span>
-                        </a>
+                        </button>
                     </div>
                     
                 </div>
@@ -1909,7 +1909,7 @@
               <p class="text-base text-gray-100">ⓒ All Rights Reserved</p>
               <div class="flex flex-wrap align-middle items-center">
                   
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/114029351275804" class="mr-3 mb-3 text-gray-100 hover:text-gray-300 focus:outline-none focus:ring-0 focus:ring-offset-0">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/799903969867658" class="mr-3 mb-3 text-gray-100 hover:text-gray-300 focus:outline-none focus:ring-0 focus:ring-offset-0">
                     <span class="sr-only">Facebook</span>
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path
@@ -2216,7 +2216,7 @@
     
 
     
-
+    
     <script>
         window.addEventListener("load", function() {
             setTimeout(function() {
@@ -2226,6 +2226,49 @@
             }, 5000);
         });
     </script>
+    
+    <script>
+  /**
+   * Phone number obfuscation to prevent bot scraping
+   * Decodes phone numbers from data attributes and initiates calls
+   */
+  function deobfuscateNumber(number) {
+    const isObfuscated = "False" === "True";
+    if (!isObfuscated) {
+      return number;
+    }
+    const binaryPD = atob(number);
+    const bytesPD = Uint8Array.from(binaryPD, (c) => c.charCodeAt(0));
+    const decodedPD = new TextDecoder("utf-8").decode(bytesPD);
+    const phone = decodedPD.slice(20);
+
+    return phone;
+  }
+
+  function initiateCall(element) {
+    const pref = "tel:";
+
+    try {
+      const pd = element.getAttribute("data-phone");
+      if (!pd) {
+        console.error("No phone number found on element to call");
+        return;
+      }
+      const phone = deobfuscateNumber(pd);
+
+      window.location.href = pref + phone;
+    } catch (error) {
+      console.error("Error:", error);
+
+      // Try calling the phone number
+      const fallbackPhone = element.getAttribute("data-phone");
+      if (fallbackPhone) {
+        window.location.href = pref + fallbackPhone.replace(/[^0-9]/g, "");
+      }
+    }
+  }
+</script>
+
 </body>
 
 </html>
